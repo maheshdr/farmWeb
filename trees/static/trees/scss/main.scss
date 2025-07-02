@@ -1,0 +1,40 @@
+// Override Bootstrap variables first
+$primary: #28a745;
+$font-family-base: 'Segoe UI', sans-serif;
+
+//btn colour
+$primaryBtn: blue;
+
+// Your custom styles
+body {
+  background-color: #bbc4cd;
+}
+
+.card {
+  border-radius: 16px;
+}
+
+.h-5{
+  height: 5rem;
+}
+
+.h-10{
+  height: 10rem;
+}
+
+.h-20{
+  height: 20rem;
+}
+
+.w-20{
+  width: 20rem;
+}
+
+.primary-btn{
+  color: $primaryBtn
+}
+
+.custom-carousel-icon {
+  font-size: 2rem;
+  color: $primaryBtn;
+}

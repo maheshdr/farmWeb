@@ -1,0 +1,11 @@
+<form class="d-flex" role="search" method="GET" action="{% url 'home' %}">
+    <input class="form-control me-2" name="q" type="search" placeholder="Search trees..." aria-label="Search" value="{{ request.GET.q }}">
+    <select class="form-select me-2" name="filter">
+      <option value="">Filter</option>
+      <option value="fruit" {% if request.GET.filter == "fruit" %}selected{% endif %}>Fruit Trees</option>
+      <option value="shade" {% if request.GET.filter == "shade" %}selected{% endif %}>Shade Trees</option>
+      <option value="medicinal" {% if request.GET.filter == "medicinal" %}selected{% endif %}>Medicinal Trees</option>
+    </select>
+    <button class="btn btn-light" type="submit">Search</button>
+  </form>
+  

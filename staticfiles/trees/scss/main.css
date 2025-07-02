@@ -1,0 +1,26 @@
+body {
+  background-color: #bbc4cd; }
+
+.card {
+  border-radius: 16px; }
+
+.h-5 {
+  height: 5rem; }
+
+.h-10 {
+  height: 10rem; }
+
+.h-20 {
+  height: 20rem; }
+
+.w-20 {
+  width: 20rem; }
+
+.primary-btn {
+  color: blue; }
+
+.custom-carousel-icon {
+  font-size: 2rem;
+  color: blue; }
+
+/*# sourceMappingURL=main.css.map */
