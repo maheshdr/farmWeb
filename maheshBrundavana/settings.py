@@ -10,7 +10,7 @@ SECRET_KEY = 'django-insecure-=lll_%$!kxhal3kum!r44(t7l+oir$n)yof_k3m)bq7=4e47n+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['farmweb-j2mo.onrender.com', 'localhost', '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
