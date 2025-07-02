@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from django.conf import settings
 
 # Build paths inside the project
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,6 +12,14 @@ SECRET_KEY = 'django-insecure-=lll_%$!kxhal3kum!r44(t7l+oir$n)yof_k3m)bq7=4e47n+
 DEBUG = True
 
 ALLOWED_HOSTS = ['farmweb-j2mo.onrender.com', 'localhost', '127.0.0.1']
+
+# Local vs Production Environment Toggle
+ENVIRONMENT = os.getenv('DJANGO_ENV', 'local')
+
+if ENVIRONMENT == 'production':
+    BASE_IMAGE_URL = 'https://farmweb-j2mo.onrender.com'  # replace with your domain
+else:
+    BASE_IMAGE_URL = 'http://127.0.0.1:8000'
 
 # Application definition
 INSTALLED_APPS = [
@@ -48,6 +57,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'trees.context_processors.base_image_url',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -83,6 +94,10 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'trees' / 'static',
 ]
+
+# Serve media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # SASS Processor Config
 SASS_PROCESSOR_ENABLED = True

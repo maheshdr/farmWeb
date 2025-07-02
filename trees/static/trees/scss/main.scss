@@ -38,3 +38,21 @@ body {
   font-size: 2rem;
   color: $primaryBtn;
 }
+footer {
+  background-color: #050505;
+  padding: 15px 0;
+  text-align: center;
+  color: #070707;
+  font-size: 0.9rem;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030; /* stays above other content */
+  background-color: #343a40; /* or your preferred color */
+}
+
+body {
+  padding-top: 70px; /* same as navbar height */
+}

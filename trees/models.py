@@ -8,7 +8,7 @@ class Tree(models.Model):
     fieldName = models.CharField(max_length=20, null=True, blank=True)
     lineNumber = models.CharField(max_length=20, null=True, blank=True)
     plantNumber = models.CharField(max_length=20, null=True, blank=True)
-    image = models.ImageField(upload_to='trees/images/', null=True, blank=True)
+    imageUrl = models.ImageField(upload_to='trees/images/', null=True, blank=True)
 
     def __str__(self):
         return self.name or "Unnamed Tree"

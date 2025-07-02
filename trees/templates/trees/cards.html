@@ -2,9 +2,9 @@
 <div class="container">
     <div class="row pt-4">
         {% for tree in trees %}
-        <div class="col-md-4 mb-4">
+        <div class="col-md-3 mb-4">
             <div class="card h-100">
-                <img src="{% static 'trees/images/t11.jpeg' %}" class="card-img-top" alt="{{ tree.name }}">
+                <img src="{{ BASE_IMAGE_URL }}/media/{{ tree.imageUrl }}" class="card-img-top" alt="{{ tree.name }}">
                 <div class="card-body">
                     <h4 class="card-title">Name: {{ tree.name }}</h4>
                     <h5 >Id: {{ tree.plantId }}</h5>
