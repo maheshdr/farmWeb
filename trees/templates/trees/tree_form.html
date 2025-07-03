@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'trees/css/form.css' %}">
+<form method="post" enctype="multipart/form-data" class="tree-form">
+    {% csrf_token %}
+    {% for field in form %}
+        <div class="form-group mb-3">
+            <label class="form-label">{{ field.label }}</label>
+            {{ field }}
+            {% if field.errors %}
+                <div class="text-danger">{{ field.errors }}</div>
+            {% endif %}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-success">{{ action }}</button>
+</form>

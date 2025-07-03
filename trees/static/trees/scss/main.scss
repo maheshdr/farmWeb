@@ -58,9 +58,10 @@ footer {
 }
 
 .card-label{
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #2f2c2c;
+  text-transform: uppercase;
 }
 
 
@@ -97,7 +98,7 @@ footer {
 /* Extra large devices (large desktops, 992px and up) */
 @media (min-width: 992px) {
   .carousel-img {
-    height: 15rem;
+    height: 18rem;
   }
   .card-img {
     height: 20rem;

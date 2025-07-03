@@ -3,14 +3,22 @@
     {% for tree in trees %}
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 pb-2 pt-0">
         <div class="card h-100">
-            <img src="{{ BASE_IMAGE_URL }}/media/{{ tree.imageUrl }}" class="card-img-top card-img" alt="{{ tree.name }}">
+            <img src="{{ BASE_IMAGE_URL }}/media/{{ tree.imageUrl }}" class="card-img-top card-img" alt="{{ tree.plantName }}">
             <div class="card-body p-2">
-                <h4 class="mb-0"><span>Name: </span>{{ tree.name }}</h4>
-                <h6 class="mb-0"><span class="card-label">Id: </span> {{ tree.plantId }}</h6>
-                <h6 class="mb-0"><span class="card-label">Field: </span> {{ tree.fieldName }}</h6>
-                <h6 class="mb-0"><span class="card-label">Line: </span> {{ tree.lineNumber }}</h6>
-                <h6 class="mb-0"><span class="card-label">Plant Number: </span>{{ tree.plantNumber }}</h6>
-                <p class="card-text"><span class="card-label">Description: </span>{{ tree.desc }}</p>
+                <h5 class="mb-1"><span>Name: </span>{{ tree.plantName }}</h5>
+                <h6 class="mb-0 d-flex flex-wrap">
+                    <div class="w-50"><span class="card-label">ID:</span> {{ tree.plantId }}</div>
+                    <div class="w-50"><span class="card-label">Field:</span> {{ tree.fieldName }}</div>
+                </h6>
+                <h6 class="mb-0 d-flex flex-wrap">
+                    <div class="w-50"><span class="card-label">Line No: </span> {{ tree.lineNumber }}</div>
+                    <div class="w-50"><span class="card-label">Plant No: </span>{{ tree.plantNumber }}</div>
+                </h6>
+                <p class="card-text"><span class="card-label">Description: </span>{{ tree.description }}</p>
+            </div>
+            <div class="card-footer text-center">
+                <a href="{% url 'tree_update' tree.id %}" class="btn btn-sm btn-primary me-2">Edit</a>
+                <a href="{% url 'tree_delete' tree.id %}" class="btn btn-sm btn-danger">Delete</a>
             </div>
         </div>
     </div>

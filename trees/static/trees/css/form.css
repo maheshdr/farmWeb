@@ -1,0 +1,29 @@
+
+.tree-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #f4f4f4;
+  border-radius: 8px;
+}
+
+.tree-form .form-label {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.tree-form input,
+.tree-form select,
+.tree-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tree-form .btn {
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+<h2>Tree Admin Panel</h2>
+<a href="{% url 'tree_create' %}">Create New Tree</a>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Image</th>
+        <th>Actions</th>
+    </tr>
+    {% for tree in trees %}
+    <tr>
+        <td>{{ tree.plantName }}</td>
+        <td>{{ tree.plantType }}</td>
+        <td>
+            {% if tree.imageUrl %}
+                <img src="{{ tree.imageUrl }}" width="80">
+            {% endif %}
+        </td>
+        <td>
+            <a href="{% url 'tree_update' tree.pk %}">Edit</a> |
+            <a href="{% url 'tree_delete' tree.pk %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
