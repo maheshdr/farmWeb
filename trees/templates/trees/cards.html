@@ -22,9 +22,9 @@
                 </h6>
                 <p class="card-text"><span class="card-label">Description: </span>{{ tree.description }}</p>
             </div>
-            <div class="card-footer text-center">
-                <a href="{% url 'tree_update' tree.id %}" class="btn btn-sm btn-primary me-2">Edit</a>
-                <a href="{% url 'tree_delete' tree.id %}" class="btn btn-sm btn-danger">Delete</a>
+            <div class="card-footer text-center d-flex">
+                <a href="{% url 'tree_update' tree.id %}" class="btn btn-sm btn-primary w-50 me-1">Edit</a>
+                <a href="{% url 'tree_delete' tree.id %}" class="btn btn-sm btn-danger w-50 ms-1">Delete</a>
             </div>
         </div>
     </div>
