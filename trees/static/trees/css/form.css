@@ -1,4 +1,11 @@
 .tree-form {
+  background: linear-gradient(to bottom right, #e0f7fa, #a5d6a7); /* light teal to light green */
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.tree-form {
   padding: 1rem;
 }
 
@@ -20,7 +27,6 @@
   font-weight: bold;
   padding: 10px;
   border-radius: 6px;
-  transition: background 0.3s ease-in-out;
 }
 
 .tree-form button:hover {

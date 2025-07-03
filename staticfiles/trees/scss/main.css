@@ -35,13 +35,17 @@ footer {
   top: 0;
   width: 100%;
   z-index: 1030;
-  background-color: rgba(25, 135, 98, 0.42) !important; }
+  background-color: rgba(25, 135, 98, 0.5) !important; }
 
 .card-label {
   font-size: 1rem;
   font-weight: 600;
   color: #2f2c2c;
   text-transform: uppercase; }
+
+.card-scroll {
+  max-height: 75vh;
+  overflow-y: auto; }
 
 /* Small devices (phones, less than 576px) */
 @media (max-width: 575.98px) {

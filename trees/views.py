@@ -15,9 +15,9 @@ def home(request):
             Q(plantName__icontains=q) | Q(description__icontains=q)  # Correct usage of OR condition
         )
 
-    # Apply filter by type
+    # Apply filter by plant type
     if filter_val:
-        trees = trees.filter(type__iexact=filter_val)
+        trees = trees.filter(plantType__iexact=filter_val)
 
     return render(request, "trees/home.html", {"trees": trees})
 
