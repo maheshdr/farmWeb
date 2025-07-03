@@ -1,15 +1,20 @@
-// Override Bootstrap variables first
-$primary: #28a745;
 $font-family-base: 'Segoe UI', sans-serif;
 
+body {
+  background-color: #bbc4cd;
+  padding-top: 70px;
+}
+
+//colour's
+
+//global
+$primary: #28a745;
 //btn colour
 $primaryBtn: blue;
 
-// Your custom styles
-body {
-  background-color: #bbc4cd;
+.mb-0{
+margin-bottom: 0% !important;
 }
-
 .card {
   border-radius: 16px;
 }
@@ -34,10 +39,7 @@ body {
   color: $primaryBtn
 }
 
-.custom-carousel-icon {
-  font-size: 2rem;
-  color: $primaryBtn;
-}
+
 footer {
   background-color: #050505;
   padding: 15px 0;
@@ -45,14 +47,59 @@ footer {
   color: #070707;
   font-size: 0.9rem;
 }
-.navbar {
+
+
+.dr-nav {
   position: fixed;
   top: 0;
   width: 100%;
-  z-index: 1030; /* stays above other content */
-  background-color: #343a40; /* or your preferred color */
+  z-index: 1030;
+  background-color: rgba(25, 135, 98, 0.42) !important;
 }
 
-body {
-  padding-top: 70px; /* same as navbar height */
+.card-label{
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2f2c2c;
+}
+
+
+/* Small devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .carousel-img {
+    height: 6rem;
+  }
+  .card-img {
+    height: 10rem;
+  }
+}
+
+/* Medium devices (tablets, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .carousel-img {
+    height: 8rem;
+  }
+  .card-img {
+    height: 12rem;
+  }
+}
+
+/* Large devices (desktops, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .carousel-img {
+    height: 12rem;
+  }
+  .card-img {
+    height: 15rem;
+  }
+}
+
+/* Extra large devices (large desktops, 992px and up) */
+@media (min-width: 992px) {
+  .carousel-img {
+    height: 15rem;
+  }
+  .card-img {
+    height: 20rem;
+  }
 }
