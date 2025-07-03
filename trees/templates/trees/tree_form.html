@@ -1,15 +1,27 @@
 {% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="{% static 'trees/css/form.css' %}">
-<form method="post" enctype="multipart/form-data" class="tree-form">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="form-group mb-3">
-            <label class="form-label">{{ field.label }}</label>
-            {{ field }}
-            {% if field.errors %}
-                <div class="text-danger">{{ field.errors }}</div>
-            {% endif %}
+
+<div class="container my-4">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h4 class="mb-3 text-center">{{ action }} Tree</h4>
+            <form method="post" enctype="multipart/form-data" class="tree-form">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold text-uppercase small">{{ field.label }}</label>
+                        {{ field}}
+                        {% if field.errors %}
+                            <div class="text-danger small">{{ field.errors }}</div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <div class="d-flex gap-2">
+                    <a href="{% url 'home' %}" class="btn btn-secondary w-50">← Back</a>
+                    <button type="submit" class="btn btn-success w-50">{{ action }}</button>
+                </div>
+            </form>
         </div>
-    {% endfor %}
-    <button type="submit" class="btn btn-success">{{ action }}</button>
-</form>
+    </div>
+</div>
