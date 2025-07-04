@@ -1,0 +1,31 @@
+
+.text-theme {
+    color: #4d3826;
+}
+
+.btn-add {
+    background-color: rgb(72, 136, 62);
+    color: #fff;
+
+    &:hover {
+        background-color: rgb(56, 106, 48);
+    }
+}
+
+.btn-edit {
+    background-color: rgb(39, 125, 161);
+    color: #fff;
+
+    &:hover {
+        background-color: rgb(30, 100, 130);
+    }
+}
+
+.btn-delete {
+    background-color: rgb(179, 55, 55);
+    color: #fff;
+
+    &:hover {
+        background-color: rgb(140, 40, 40);
+    }
+}
