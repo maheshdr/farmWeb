@@ -1,111 +1,179 @@
-$font-family-base: 'Segoe UI', sans-serif;
+// ------------------------------
+// Google Fonts Import
+// ------------------------------
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 
+// ------------------------------
+// Base Variables
+// ------------------------------
+$font-family-base: 'Lora', serif;
+$color-background: #f8f3ec;
+$color-text: #333;
+$color-white: #ffffff;
+
+// Navbar Colors
+$color-nav-bg: #4d3826;
+$color-nav-text: #fff8ec;
+$color-nav-hover: #73573c;
+
+// Button Colors
+$color-add-bg: #48883e;
+$color-add-hover: #386a30;
+
+$color-edit-bg: #277da1;
+$color-edit-hover: #1e6482;
+
+$color-delete-bg: #b33737;
+$color-delete-hover: #8c2828;
+
+$color-link: #f1d3a4;
+$color-link-hover: #e6c18a;
+
+// A warm, soft beige (matches the natural, welcoming theme)
+$card-bg: #f7f7f7; 
+
+// ------------------------------
+// Global Styles
+// ------------------------------
 body {
-  background-color: #bbc4cd;
+  font-family: $font-family-base;
+  background-color: $color-background;
   padding-top: 70px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $color-text;
 }
 
-//colour's
-
-//global
-$primary: #28a745;
-//btn colour
-$primaryBtn: blue;
-
-.mb-0{
-margin-bottom: 0% !important;
+.mb-0 {
+  margin-bottom: 0 !important;
 }
+
+// ------------------------------
+// Layout Utilities
+// ------------------------------
+.h-5   { height: 5rem; }
+.h-10  { height: 10rem; }
+.h-20  { height: 20rem; }
+.w-20  { width: 20rem; }
+
 .card {
   border-radius: 16px;
-}
-
-.h-5{
-  height: 5rem;
-}
-
-.h-10{
-  height: 10rem;
-}
-
-.h-20{
-  height: 20rem;
-}
-
-.w-20{
-  width: 20rem;
-}
-
-.primary-btn{
-  color: $primaryBtn
+  background-color: $card-bg;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 
-footer {
-  background-color: #050505;
-  padding: 15px 0;
-  text-align: center;
-  color: #070707;
-  font-size: 0.9rem;
-}
-
-
-.dr-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1030;
-  background-color: rgba(25, 135, 98, 0.50) !important;
-}
-
-.card-label{
+.card-label {
   font-size: 1rem;
   font-weight: 600;
   color: #2f2c2c;
   text-transform: uppercase;
 }
 
-.card-scroll{
-  max-height: 75vh; 
+.card-scroll {
+  max-height: 75vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
-/* Small devices (phones, less than 576px) */
+// ------------------------------
+// Navbar Styles
+// ------------------------------
+.dr-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1030;
+  background-color: $color-nav-bg !important;
+
+  .nav-link,
+  .navbar-brand {
+    color: $color-nav-text !important;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: $color-nav-hover !important;
+    }
+  }
+}
+
+// ------------------------------
+// Footer Styles
+// ------------------------------
+footer {
+  background-color: $color-nav-bg;
+  padding: 15px 0;
+  text-align: center;
+  color: $color-nav-text;
+  font-size: 0.9rem;
+
+  a {
+    color: $color-link;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-link-hover;
+    }
+  }
+}
+
+// ------------------------------
+// Button Styles
+// ------------------------------
+.btn-add {
+  background-color: $color-add-bg;
+  color: $color-white;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $color-add-hover;
+    color: $color-white;
+  }
+}
+
+.btn-edit {
+  background-color: $color-edit-bg;
+  color: $color-white;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color-edit-hover;
+    color: $color-white;
+  }
+}
+
+.btn-delete {
+  background-color: $color-delete-bg;
+  color: $color-white;
+  border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $color-delete-hover;
+    color: $color-white;
+  }
+}
+
+// ------------------------------
+// Responsive Image Heights
+// ------------------------------
 @media (max-width: 575.98px) {
-  .carousel-img {
-    height: 6rem;
-  }
-  .card-img {
-    height: 10rem;
-  }
+  .carousel-img { height: 6rem; }
+  .card-img     { height: 10rem; }
 }
 
-/* Medium devices (tablets, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px) {
-  .carousel-img {
-    height: 8rem;
-  }
-  .card-img {
-    height: 12rem;
-  }
+  .carousel-img { height: 8rem; }
+  .card-img     { height: 12rem; }
 }
 
-/* Large devices (desktops, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px) {
-  .carousel-img {
-    height: 12rem;
-  }
-  .card-img {
-    height: 15rem;
-  }
+  .carousel-img { height: 12rem; }
+  .card-img     { height: 15rem; }
 }
 
-/* Extra large devices (large desktops, 992px and up) */
 @media (min-width: 992px) {
-  .carousel-img {
-    height: 18rem;
-  }
-  .card-img {
-    height: 20rem;
-  }
+  .carousel-img { height: 18rem; }
+  .card-img     { height: 20rem; }
 }

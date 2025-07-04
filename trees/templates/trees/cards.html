@@ -1,7 +1,7 @@
 {% load static %}
 <div class="d-flex justify-content-center py-1">
-    <a href="{% url 'tree_create' %}" class="btn btn-primary w-100 w-sm-75 w-md-50 w-lg-25" style="max-width: 80%;">
-      <i class="bi bi-plus-circle me-1"></i> ADD PLANT
+    <a href="{% url 'tree_create' %}" class="btn btn-add w-100 w-sm-75 w-md-50 w-lg-25" style="max-width: 80%;">
+        <i class="bi bi-plus-circle me-1"></i> ADD PLANT
     </a>
 </div>
 <div class="card-container-scrollable card-scroll">
@@ -23,8 +23,8 @@
                 <p class="card-text"><span class="card-label">Description: </span>{{ tree.description }}</p>
             </div>
             <div class="card-footer text-center d-flex">
-                <a href="{% url 'tree_update' tree.id %}" class="btn btn-sm btn-primary w-50 me-1">Edit</a>
-                <a href="{% url 'tree_delete' tree.id %}" class="btn btn-sm btn-danger w-50 ms-1">Delete</a>
+                <a href="{% url 'tree_update' tree.id %}" class="btn btn-sm btn-edit w-50 me-1">Edit</a>
+                <a href="{% url 'tree_delete' tree.id %}" class="btn btn-sm btn-delete w-50 ms-1">Delete</a>
             </div>
         </div>
     </div>

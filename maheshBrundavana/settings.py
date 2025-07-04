@@ -1,25 +1,21 @@
 import os
 from pathlib import Path
-from django.conf import settings
 
-# Build paths inside the project
+# Base directory of the project
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# SECURITY WARNING: keep the secret key used in production!
-SECRET_KEY = 'django-insecure-=lll_%$!kxhal3kum!r44(t7l+oir$n)yof_k3m)bq7=4e47n+'
+# Environment settings
+ENVIRONMENT = os.getenv('DJANGO_ENV', 'local')
+DEBUG = ENVIRONMENT != 'production'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
+# Host and domain setup
 ALLOWED_HOSTS = ['farmweb-j2mo.onrender.com', 'localhost', '127.0.0.1']
 
-# Local vs Production Environment Toggle
-ENVIRONMENT = os.getenv('DJANGO_ENV', 'local')
+# Secret key (keep secure in production)
+SECRET_KEY = 'django-insecure-=lll_%$!kxhal3kum!r44(t7l+oir$n)yof_k3m)bq7=4e47n+'
 
-if ENVIRONMENT == 'production':
-    BASE_IMAGE_URL = 'https://farmweb-j2mo.onrender.com'  # replace with your domain
-else:
-    BASE_IMAGE_URL = 'http://127.0.0.1:8000'
+# Image base URL
+BASE_IMAGE_URL = 'https://farmweb-j2mo.onrender.com' if ENVIRONMENT == 'production' else 'http://127.0.0.1:8000'
 
 # Application definition
 INSTALLED_APPS = [
@@ -36,13 +32,13 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # For serving static files in production
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    "whitenoise.middleware.WhiteNoiseMiddleware"
 ]
 
 ROOT_URLCONF = 'maheshBrundavana.urls'
@@ -66,7 +62,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'maheshBrundavana.wsgi.application'
 
-# Database
+# Database configuration
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -82,26 +78,26 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# Internationalization
+# Localization settings
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = 'static/'
+# Static files configuration
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'trees' / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-STATICFILES_DIRS = [
-    BASE_DIR / 'trees' / 'static',
-]
-
-# Serve media files
+# Media files configuration
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# SASS Processor Config
+# SASS processor configuration
 SASS_PROCESSOR_ENABLED = True
 SASS_PROCESSOR_ROOT = BASE_DIR / 'trees' / 'static'
+
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -110,9 +106,3 @@ STATICFILES_FINDERS = [
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-# ✅ Add this line to fix the ImproperlyConfigured error:
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-
