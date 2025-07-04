@@ -52,34 +52,21 @@ def tree_create(request):
 
 def tree_update(request, pk):
     tree = get_object_or_404(Tree, pk=pk)
-    old_image = tree.imageUrl
 
     if request.method == 'POST':
+        old_image = tree.imageUrl  # Save old image before binding new data
         form = TreeForm(request.POST, request.FILES, instance=tree)
-
-        clear_image = request.POST.get('imageUrl-clear', False)
-        new_image = request.FILES.get('imageUrl', None)
-
         if form.is_valid():
-            # Case 1: User uploaded a new image
-            if new_image:
-                if old_image and hasattr(old_image, 'path') and os.path.isfile(old_image.path):
-                    os.remove(old_image.path)
-
-            # Case 2: User wants to clear the image (checkbox checked)
-            elif clear_image and old_image:
-                if hasattr(old_image, 'path') and os.path.isfile(old_image.path):
-                    os.remove(old_image.path)
-                tree.imageUrl = None  # Clear the field manually
-
+            if 'imageUrl' in request.FILES and old_image:
+                old_image_path = old_image.path
+                if os.path.isfile(old_image_path):
+                    os.remove(old_image_path)  # Delete old image
             form.save()
-            return redirect('tree_admin_list')
+            return redirect('tree_admin_list')  # or your redirect
     else:
         form = TreeForm(instance=tree)
 
     return render(request, 'trees/tree_form.html', {'form': form, 'action': 'Update'})
-
-
 
 def tree_delete(request, pk):
     """Delete a tree record and its associated image."""
