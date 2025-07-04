@@ -1,25 +1,27 @@
-# Byte-compiled / optimized / DLL files
+# Byte-compiled / optimized / Python cache files
 __pycache__/
 *.py[cod]
 *.pyo
 
-# Django stuff
+# Django files
+db.sqlite3
 *.log
 *.pot
-*.pyc
-db.sqlite3
+*.poc
+
+# Media and static files (runtime generated)
 media/
 staticfiles/
 
-# Virtual environments
-venv/
+# Virtual environment directories
 env/
+venv/
 
-# VSCode and IDE settings
+# Editor / IDE files
 .vscode/
 *.swp
 *.swo
 
-# OS files
+# macOS and Windows system files
 .DS_Store
 Thumbs.db
