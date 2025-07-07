@@ -72,7 +72,7 @@ footer {
     background-color: #386a30;
     color: #ffffff; }
 
-.btn-edit {
+.btn-EDIT{
   background-color: #277da1;
   color: #ffffff;
   border: none; }
@@ -80,7 +80,7 @@ footer {
     background-color: #1e6482;
     color: #ffffff; }
 
-.btn-delete {
+.btn-DELETE {
   background-color: #b33737;
   color: #ffffff;
   border: none; }
