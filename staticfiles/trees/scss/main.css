@@ -72,19 +72,19 @@ footer {
     background-color: #386a30;
     color: #ffffff; }
 
-.btn-edit {
+.btn-EDIT {
   background-color: #277da1;
   color: #ffffff;
   border: none; }
-  .btn-edit:hover, .btn-edit:focus {
+  .btn-EDIT:hover, .btn-EDIT:focus {
     background-color: #1e6482;
     color: #ffffff; }
 
-.btn-delete {
+.btn-DELETE{
   background-color: #b33737;
   color: #ffffff;
   border: none; }
-  .btn-delete:hover, .btn-delete:focus {
+  .btn-DELETE:hover, .btn-DELETE:focus {
     background-color: #8c2828;
     color: #ffffff; }
 
