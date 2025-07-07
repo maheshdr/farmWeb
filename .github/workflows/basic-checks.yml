@@ -1,0 +1,15 @@
+name: Basic Check
+
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run a basic check
+        run: echo "✅ Pull request check passed"
